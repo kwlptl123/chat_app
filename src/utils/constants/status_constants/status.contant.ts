@@ -1,0 +1,95 @@
+/**
+ * ARCHITECTURE OVERVIEW:
+ * Centralized repository for application-wide system enumerations and configuration constants.
+ * It enforces type safety by freezing the constants and categorizing them into strict namespaces.
+ *
+ * HIERARCHY & PRIORITY:
+ * 1. Categorization: Constants are grouped by domain (Status, Role, Service, Notification, Retail).
+ * 2. Immutability: Apply `as const` to convert generic numbers into literal numeric types.
+ * 3. Export: Provide a single unified export for straightforward consumption in other modules.
+ *
+ * IMPLEMENTATION EXAMPLES:
+ * 1. Check a role: `if (user.roleId === SYSTEM_CONSTANTS.ROLE.ADMIN) { ... }`
+ * 2. Update a status: `ship.status = SYSTEM_CONSTANTS.STATUS.SHIP_ARRIVIED;`
+ */
+
+const STATUS_MASTER = {
+    // SHIP_ACTIVE: 5,
+    // SHIP_INACTIVE: 6,
+    SHIP_SCHEDULED: 4,
+    SHIP_DELAYED: 3,
+    SHIP_ARRIVIED: 2,
+    PASSENGER_EMBARK: 22,
+    PASSENGER_DISEMBARK: 23,
+    PASSENGER_NO_SHOW: 25,
+    PASSENEGR_TRANSIT: 24,
+    PASSENGER_UNKNOWN: 13,
+    OPEN_STATUS_ACTIVE: 2,
+    OPEN_STATUS_INACTIVE: 3,
+    PORTCALL_SCHEDULED: 5,
+    PORTCALL_DELAYED: 6,
+    PORTCALL_ARRIVED: 7,
+    PORTCALL_DEPATURE: 8,
+    PORTCALL_FUELING: 9,
+    JOB_OPEN: 11,
+    JOB_ACTIVE: 12,
+    JOB_INACTIVE: 13,
+    DRS_OPEN: 15,
+    DRS_IN_PROGRESS: 16,
+    DRS_COMPLETE: 17,
+    PAYMENT_INREVIEW: 28,
+    PAYMENT_PARTIAL: 29,
+    PAYMENT_COMPLETED: 30,
+    DOCUMENT_UPLOADED: 19,
+    DOCUMNET_NOT_UPLOADED: 20,
+    PAYMENT_REJECTED: 31,
+    OTHER_SERIVCE_REQUEST_OPEN: 33,
+    OTHER_SERIVCE_REQUEST_OPERATOR_PROCEED: 34,
+    OTHER_SERIVCE_REQUEST_AGENT_CONFIRM: 35,
+    OTHER_SERVICE_REQUEST_AGENT_REJECTED: 37,
+    INVOICE_PENDING: 42,
+    INVOICE_APPROVED: 43,
+    CONTRACT_PENDING: 45,
+    CONTRACT_APPROVED: 46,
+    CONTRACT_INACTIVE: 47,
+} as const;
+
+const ROLE_MASTER = {
+    ADMIN: 1,
+    AGENT: 2,
+    OPERATOR: 3,
+} as const;
+
+const SERVICE_MASTER = {
+    OTHER_SERVICE: 12,
+} as const;
+
+const NOTIFICATION_SETTING = {
+    OPERATOR_PAYMENT_NOTIFICATION: 17,
+    AGENT_PAYMENT_NOTIFICATION: 19,
+    OTHER_SERVICE_NOTIFICATION: 18,
+    PORT_CALL_CREATION_NOTIFICATION: 20,
+    AGENT_JOB_CREATION_NOTIFICATION: 21,
+    CREW_AND_PASSANGER_UPLOAD: 22,
+    OTHER_SERVICE_PAYMENT_NOTIFICATION: 23,
+    JOB_RELEASED_FOR_AGENT_NOTIFICATION: 24,
+    DRS_STATUS_TO_ADMIN_OR_OPERATOR: 25,
+} as const;
+
+const RETAIL_PARENT_STATUS_DATA = {
+    RETAIL_PARENT_STATUS: 45,
+    RETAIL_PARENT_DRAFT: 46,
+    RETAIL_APPROVED: 47,
+    RETAIL_AVAILABLE: 49,
+    RETAIL_EXPIRED: 48,
+} as const;
+
+const SYSTEM_CONSTANTS = {
+    STATUS: STATUS_MASTER,
+    ROLE: ROLE_MASTER,
+    SERVICE: SERVICE_MASTER,
+    NOTIFICATION: NOTIFICATION_SETTING,
+    RETAIL: RETAIL_PARENT_STATUS_DATA,
+} as const;
+
+export default SYSTEM_CONSTANTS;

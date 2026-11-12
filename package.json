@@ -1,0 +1,73 @@
+{
+  "name": "chat-backend",
+  "version": "1.0.0",
+  "description": "A project developed by Kewal",
+  "license": "ISC",
+  "author": "Kewal",
+  "type": "module",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "nodemon --watch src --ignore src/resources/json/ --ext ts --exec tsx src/server.ts",
+    "build": "tsc",
+    "start": "nodemon --watch src --ignore src/resources/json/ --ext ts --exec tsx src/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate": "tsx src/scripts/generator/index.ts",
+    "update:schema": "tsx src/scripts/generator/update.ts",
+    "schema:pull": "tsx src/scripts/generator/generate_schema.ts"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "argon2@0.40.3": true,
+    "protobufjs@7.6.6": true,
+    "puppeteer@25.12.0": true
+  },
+  "dependencies": {
+    "app-root-path": "^3.1.0",
+    "argon2": "^0.40.3",
+    "axios": "^1.6.7",
+    "chalk": "^4.1.0",
+    "cheerio": "^1.0.0-rc.12",
+    "compression": "^1.8.2",
+    "cors": "^2.8.5",
+    "date-fns": "^4.1.0",
+    "diacritics": "^1.3.0",
+    "dotenv": "^16.3.1",
+    "exceljs": "^4.4.0",
+    "express": "^4.21.0",
+    "express-rate-limit": "^7.1.5",
+    "express-validator": "^7.0.1",
+    "firebase-admin": "^12.7.0",
+    "form-data": "^4.0.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "lodash": "^4.17.21",
+    "moment": "^2.30.1",
+    "moment-timezone": "^0.5.45",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.9.1",
+    "nodemailer": "^10.0.10",
+    "puppeteer": "^25.11.0",
+    "sequelize": "^6.37.3",
+    "winston": "^3.8.2",
+    "winston-daily-rotate-file": "^4.7.1"
+  },
+  "devDependencies": {
+    "@types/compression": "^1.8.1",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/lodash": "^4.17.25",
+    "@types/morgan": "^1.9.10",
+    "@types/multer": "^2.2.0",
+    "@types/node": "^26.6.2",
+    "@types/nodemailer": "^8.0.2",
+    "@types/sequelize": "^4.28.20",
+    "autocannon": "^8.0.0",
+    "nodemon": "^3.1.14",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "overrides": {
+    "uuid": "^11.1.1"
+  }
+}

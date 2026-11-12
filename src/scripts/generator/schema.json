@@ -1,0 +1,77 @@
+{
+  "moduleGroup": "master",
+  "folderName": "notification_master",
+  "entityName": "NotificationMaster",
+  "tableName": "notification_master",
+  "viewName": "vw_user_notifications",
+  "primaryKey": "notification_id",
+  "useJsonCache": false,
+  "tableFields": {
+    "notification_id": "int",
+    "user_id": {
+      "type": "int",
+      "allowNull": false,
+      "message": "User Id is required."
+    },
+    "sender_id": {
+      "type": "int",
+      "allowNull": true
+    },
+    "chat_id": {
+      "type": "int",
+      "allowNull": true
+    },
+    "firebase_message_id": {
+      "type": "varchar(128)",
+      "allowNull": true
+    },
+    "notification_type": {
+      "type": "enum('NEW_MESSAGE','GROUP_ADDED','MENTION','SYSTEM')",
+      "allowNull": false,
+      "message": "Notification Type is required."
+    },
+    "title": {
+      "type": "varchar(150)",
+      "allowNull": false,
+      "message": "Title is required."
+    },
+    "body": {
+      "type": "text",
+      "allowNull": false,
+      "message": "Body is required."
+    },
+    "is_read": {
+      "type": "tinyint(1)",
+      "allowNull": false,
+      "message": "Is Read is required."
+    },
+    "read_at": {
+      "type": "datetime",
+      "allowNull": true
+    },
+    "is_active": "tinyint(1)",
+    "created_by": "int",
+    "created_at": "datetime",
+    "modified_by": "int",
+    "modified_at": "datetime",
+    "deleted_by": "int",
+    "deleted_at": "datetime"
+  },
+  "viewFields": {
+    "notification_id": "int",
+    "recipient_id": "int",
+    "sender_id": "int",
+    "sender_name": "varchar(100)",
+    "sender_email": "varchar(150)",
+    "chat_id": "int",
+    "chat_type": "enum('DIRECT','GROUP')",
+    "chat_name": "varchar(150)",
+    "firebase_message_id": "varchar(128)",
+    "notification_type": "enum('NEW_MESSAGE','GROUP_ADDED','MENTION','SYSTEM')",
+    "title": "varchar(150)",
+    "body": "text",
+    "is_read": "tinyint(1)",
+    "read_at": "datetime",
+    "created_at": "datetime"
+  }
+}

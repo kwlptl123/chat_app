@@ -1,0 +1,161 @@
+{
+    "compilerOptions": {
+        // ============================================================
+        // TARGET
+        // ============================================================
+        // Decides which version of JavaScript TypeScript will generate.
+        //
+        // ES2022 = modern JavaScript with features supported by
+        // modern versions of Node.js.
+        //
+        // Other common options:
+        // "ES5"   -> Very old JavaScript, maximum compatibility
+        // "ES2015" -> Older modern JavaScript
+        // "ES2020" -> Modern JavaScript
+        // "ES2022" -> Modern JavaScript (recommended for modern Node.js)
+        // "ESNext" -> Latest JavaScript features
+        //
+        "target": "ES2022",
+        // ============================================================
+        // MODULE
+        // ============================================================
+        // Defines how JavaScript modules are handled.
+        //
+        // NodeNext -> Recommended when using modern Node.js with
+        //             ES Modules.
+        //
+        // Other options:
+        // "CommonJS" -> Traditional Node.js require/module.exports
+        // "ESNext"   -> Modern ES modules
+        // "NodeNext" -> Node.js-aware module handling
+        //
+        // Since package.json contains:
+        // "type": "module"
+        //
+        // NodeNext is a good choice for this project.
+        //
+        "module": "NodeNext",
+        // ============================================================
+        // MODULE RESOLUTION
+        // ============================================================
+        // Tells TypeScript how to find imported files and packages.
+        //
+        // NodeNext -> Follow Node.js's modern module resolution rules.
+        //
+        // Other options:
+        // "Node"   -> Traditional Node.js resolution
+        // "Bundler" -> Useful when using tools such as Vite/Webpack
+        //
+        "moduleResolution": "NodeNext",
+        // ============================================================
+        // ROOT DIRECTORY
+        // ============================================================
+        // Tells TypeScript where your source TypeScript files are.
+        //
+        // Example:
+        //
+        // src/
+        //   server.ts
+        //   routes.ts
+        //
+        // TypeScript considers "src" to be the source/root directory.
+        //
+        "rootDir": "./src",
+        // ============================================================
+        // OUTPUT DIRECTORY
+        // ============================================================
+        // Specifies where compiled JavaScript files should be placed.
+        //
+        // Example:
+        //
+        // src/server.ts
+        //
+        // becomes:
+        //
+        // dist/server.js
+        //
+        "outDir": "./dist",
+        // ============================================================
+        // STRICT
+        // ============================================================
+        // Enables TypeScript's strict type checking.
+        //
+        // true -> TypeScript catches more potential errors.
+        // false -> TypeScript is more relaxed.
+        //
+        // Recommended:
+        // Keep this TRUE for new projects.
+        //
+        "strict": true,
+        // ============================================================
+        // ES MODULE INTEROP
+        // ============================================================
+        // Makes it easier to import some CommonJS packages using
+        // modern import syntax.
+        //
+        // Example:
+        //
+        // import express from "express";
+        //
+        // instead of:
+        //
+        // const express = require("express");
+        //
+        "esModuleInterop": true,
+        // ============================================================
+        // SKIP LIBRARY CHECK
+        // ============================================================
+        // Skips type-checking of declaration files (.d.ts) inside
+        // dependencies.
+        //
+        // true  -> Faster compilation
+        // false -> TypeScript checks dependency declaration files too
+        //
+        // Most projects use true.
+        //
+        "skipLibCheck": true,
+        // ============================================================
+        // SOURCE MAP
+        // ============================================================
+        // Generates .map files that help debuggers connect compiled
+        // JavaScript back to your original TypeScript code.
+        //
+        // Example:
+        //
+        // server.ts
+        // server.js
+        // server.js.map
+        //
+        // Very useful when debugging.
+        //
+        "sourceMap": true,
+        // ============================================================
+        // DECLARATION
+        // ============================================================
+        // Generates TypeScript declaration files (.d.ts).
+        //
+        // Useful when creating a library/package that other developers
+        // will install.
+        //
+        // true  -> Generate .d.ts files
+        // false -> Don't generate them
+        //
+        // For a normal backend application, you can actually use false.
+        //
+        "declaration": true,
+        "resolveJsonModule": true,
+
+        "types": ["node"]
+    },
+    "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
+  },
+    "include": [
+        "src/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}
